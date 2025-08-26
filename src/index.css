@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+:root { --app-bg: linear-gradient(135deg,#ff9a9e 0%,#fad0c4 100%); }
+
+body {
+  background: var(--app-bg);
+  @apply text-white font-sans;
+}
+
+/* Handwritten note font utility */
+.handwritten { font-family: 'Dancing Script', 'Pacifico', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+/* Parallax background layers */
+.parallax-wrap { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: -1; }
+.parallax-layer { position: absolute; inset: 0; background-repeat: no-repeat; background-position: center; background-size: cover; transform: translateZ(0); }
+.parallax-layer.layer-back { background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.04), transparent 20%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03), transparent 20%); opacity: 0.9; }
+.parallax-layer.layer-mid { background-image: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); mix-blend-mode: overlay; }
+.parallax-layer.layer-front { background-image: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.02), transparent 25%); }
+
+/* Heartbeat on hover */
+.heart-beat { display: inline-block; transition: transform 0.18s ease; }
+.heart-beat:hover { transform: scale(1.06); }
+.heart-beat.pop { animation: heartbeat 0.9s ease-in-out; }
+@keyframes heartbeat { 0%{transform:scale(1)}30%{transform:scale(1.12)}40%{transform:scale(0.98)}60%{transform:scale(1.06)}100%{transform:scale(1)} }
+
+/* gentle pulse for lock heart */
+.heart-pulse { animation: heartbeat 2000ms ease-in-out infinite; transform-origin: center; }
+
+/* Sparkles */
+.sparkle { position: absolute; width: 8px; height: 8px; background: radial-gradient(circle, #fff 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0) 60%); border-radius:50%; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25)); pointer-events: none; transform: translate(-50%,-50%) scale(0.2); opacity: 0; }
+.sparkle.show { animation: sparkle-burst 700ms forwards; }
+@keyframes sparkle-burst { 0%{opacity:1; transform: translate(-50%,-50%) scale(0.2)} 60%{opacity:1; transform: translate(-50%,-150%) scale(1)} 100%{opacity:0; transform: translate(-50%,-250%) scale(0.6)} }
+
+/* Easter egg icons (star, teddy) */
+.easter { position: absolute; width: 36px; height: 36px; display:flex; align-items:center; justify-content:center; border-radius: 10px; background: rgba(255,255,255,0.06); cursor: pointer; }
+.easter .emoji { font-size: 18px; }
+
+/* Quiz option styles */
+.quiz-option { transition: box-shadow 120ms ease, transform 120ms ease; }
+.quiz-option:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.45); transform: translateY(-3px); }
+
+/* Default look for quiz choices to ensure high contrast */
+.quiz-option { background: rgba(255,255,255,0.06); padding: 0.75rem; }
+.quiz-option .flex-1 { color: #fff; }
+.quiz-option .w-7 { flex-shrink:0 }
+
+
+
+.card {
+  /* darker translucent card so white text remains readable against pastel background */
+  @apply bg-black bg-opacity-30 rounded-2xl p-6 shadow-lg text-white;
+  backdrop-filter: blur(6px);
+}
+
+.header-gradient {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+}
+
+.huge {
+  font-weight: 800;
+  font-size: 2.4rem;
+}
+
+/* Polaroid styles */
+.polaroid-container { perspective: 1200px; }
+.polaroid { width: 160px; height: 200px; cursor: grab; }
+.polaroid-inner { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s; }
+.polaroid-inner.flipped { transform: rotateY(180deg); }
+.polaroid-front, .polaroid-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.35); }
+.polaroid-front { background: white; color: #111; display: flex; flex-direction: column; }
+.polaroid-img { width: 100%; height: 78%; object-fit: cover; display: block; }
+.polaroid-caption { padding: 8px; font-weight: 600; font-size: 12px; }
+.polaroid-back { transform: rotateY(180deg); background: #111; color: #fff; display:flex; align-items:center; justify-content:center; }
+
+/* Polaroid hint / tooltip */
+.polaroid-hint { position: absolute; left: 50%; top: 6%; transform: translateX(-50%); background: rgba(255,255,255,0.08); color: #fff; padding: 6px 12px; border-radius: 999px; font-size: 13px; backdrop-filter: blur(4px); pointer-events: none; display:flex; gap:8px; align-items:center; z-index:40; }
+.polaroid-hint .dot { width:10px; height:10px; background: linear-gradient(135deg,#fff,#ffd1dc); border-radius:50%; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transform-origin:center; animation: hint-pulse 1500ms ease-in-out infinite; }
+@keyframes hint-pulse { 0%{transform:scale(0.86);opacity:0.8}50%{transform:scale(1.12);opacity:1}100%{transform:scale(0.86);opacity:0.8} }
+
+/* SVG waveform container fallback styling */
+.player-wave-svg { width: 90px; height: 44px; }
+
+/* make sure polaroids are still reachable by pointer events */
+
+

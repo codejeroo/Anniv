@@ -1,0 +1,67 @@
+{
+  "anniversary": "2024-08-27",
+  "trips": [
+    { "title": "CDO TRIP", "year": 2023, "notes": "Got lost in CDO" },
+    { "title": "CDO PART 2", "year": 2024, "notes": "Got stuck in Holy Week" }
+  ],
+  "jokes": [
+    "That time we got lost and blamed the map",
+    "You always steal my fries"
+  ],
+  "anniversaryLetter": "To Ms. Joanna Marie Tradio\n\nJust can’t get over the fact that it has been a whole year with you. It’s both the fastest and slowest, sweetest unfolding of times that I will never forget. All of our laughs, every quiet night, and even every little crazy thing we’ve done together…. They’ve all become part of me.\n\nWhen I think of everything we have done together, I do not remember the days where we did many activities or the perfect photos that we have taken — the little and ordinary things you have done with me are what I remember most. The way you hold my hand when we don’t know what to say, the way you take my jokes only I understand, and the nights you stayed awake just to make sure that I was going to sleep safely. Those things, those quiet and soft touches, are far more than what I can express.\n\nThrough this and many other instances, you have shown me that magic is in the mundane and that being with you is the best thing in the world. Apart from your smile, the way it slowly appears, the lovely rhythm of your comfort, the voice that you have when we talk about the weirdest and the deepest things at 2 a.m., I forgot. No matter where we are does not matter — we can be lost on a trip, caught in the rain, or just sitting side by side — with you, everything is an adventure.\n\nIf I was a list, you would be the bullet point. You are the sure thing I can count on when I am unsettled, the strength I gain when I am hesitant, my smile for little wins and my solace for the ugly days. Loving you, has really worked wonders in my character, it has made me more loving, courageous, and kinder — you are one of the reasons why I am my absolute best self.\n\nI really love our little rituals. I love our playlist, our inside jokes that no one else understands, and the way we are always able to find each other’s hands in a crowd. I adore the dreams we whisper about late at night. Some are silly and some are serious — but all of them are precious just because they are ours. Even when it comes to our silence which is very rare, it is still our home.\n\nWell, this is how that goes: I promise to keep the faith with us, to always listen with my whole heart, and to always plant a tree that will give shade to the place where your dreams are to grow. I pledge to fight fairly and reconcile faster, to laugh too loud with you, to dance in the kitchen, and most importantly, to remind you every day that you are and will always be completely loved.\n\nThe future is the place I see when I look forward. I am certain that I will treasure the most the chapters I will spend with you. Those are the coffee mornings, the walks in the rain, the wrong turns that become stories, and the nights where being just next to you is enough.\n\nOne year my love. Thanks for that. Thanks for everything. Thanks for you. Here’s to the rest.\n\nLove, Ralph.",
+  "songs": [
+  { "title": "Palagi", "artist": "TJxKZ", "audioUrl": "/audio/palagi.mp3" },
+  { "title": "Ikigai", "artist": "Dionela", "audioUrl": "/audio/ikigai.mp3" },
+  { "title": "Blue", "artist": "Yungkai", "audioUrl": "/audio/blue.mp3" },
+  { "title": "Pink Matter", "artist": "Frank Ocean", "audioUrl": "/audio/pink_matter.mp3" }
+  ],
+  "photos": [
+    { "src": "/images/IMG_9603.jpg", "caption": "SHS Graduation", "name": "Grad Day", "back": "Grad day bebe! hehe" },
+    { "src": "/images/IMG_7289.jpg", "caption": "Got lost in CDO", "name": "XU moments", "back": "One of our best long walks — I loved hearing your plans." },
+    { "src": "/images/IMG_6633.jpg", "caption": "first beach with u", "name": "masao moments", "back": "The first time we got to spend time alone in a beach" },
+    { "src": "/images/IMG_5551.jpg", "caption": "Cloudy but warm", "name": "Cozy Walk", "back": "You cutie here my cutie bb" },
+    { "src": "/images/IMG_5066.jpg", "caption": "Bright city lights", "name": "City Night", "back": "1 day trip lang kasayang kaayo argghh" },
+    { "src": "/images/IMG_3645.jpg", "caption": "First anniversary ahhh", "name": "Seans", "back": "To more anniversary with u my love" },
+    { "src": "/images/IMG_2931.jpg", "caption": "First Starbucks", "name": "u cutie patootie", "back": "First time we got starbs, then you got late for your class" },
+    { "src": "/images/IMG_2510.jpg", "caption": "First Plaza Datee", "name": "Late night walkie", "back": "The view was great but you were my favorite sight." },
+    { "src": "/images/IMG_2004.JPG", "caption": "First dateuuu", "name": "milktieee", "back": "First time we got to be alone" },
+    { "src": "/images/IMG_5026.jpg", "caption": "First CDO Trip", "name": "1st Travel Together", "back": "First holding hands, you gave me a tour in CDO hehe" }
+  ]
+  ,"milestones": [100, 365, 500]
+  ,"quiz": [
+    {
+      "id": "first-trip",
+      "question": "Where was our first trip together?",
+      "options": ["Cagayan", "Davao", "Manila", "Cebu"],
+      "answer": 0,
+      "rightFeedback": "Yes! Cagayan Loviee 🌙❤️",
+      "wrongGif": "https://media.giphy.com/media/3o6gbbuLW76jkt8vIc/giphy.gif"
+    },
+    {
+      "id": "favorite-snack",
+      "question": "Favorite snack mo na imo ginapapalit sako sa jabbi?",
+      "options": ["Fries", "Chocolate", "Popcorn", "Ice cream"],
+      "answer": 0,
+      "rightFeedback": "Guilty! but I share oie😋",
+      "wrongGif": "https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif"
+    },
+    {
+      "id": "secret-spot",
+      "question": "Where did we go to our first date(first time alone)?",
+      "options": ["Milktea", "Cinema", "Seans", "Samgyup"],
+      "answer": 0,
+      "rightFeedback": "You milktie girlie! 🌅",
+      "wrongGif": "https://media.giphy.com/media/5ntdy5Ban1dIY/giphy.gif"
+    }
+  ]
+  ,"openWhen": [
+    { "id": "sad", "label": "Open when you're sad", "type": "message", "color": "#ff6b6b", "left": "8%", "top": "40%", "content": "Hey love — you are stronger than you think. My strong girlie, Take a deep breath. 💖" },
+    { "id": "miss", "label": "Open when you miss me", "type": "gif", "color": "#6bc1ff", "left": "70%", "top": "20%", "content": "https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif" },
+    { "id": "celebrate", "label": "Open when it's a celebration", "type": "message", "color": "#ffd166", "left": "48%", "top": "72%", "content": " Happy Anniversary Babeee  I love youuu:)" }
+    ,
+    { "id": "stressed", "label": "Open when you're stressed", "type": "message", "color": "#f67280", "left": "18%", "top": "14%", "content": "Take five minutes. Breathe with me — in, hold, out. You got this. I'm with you on this bub, I love you" },
+    { "id": "goodnight", "label": "Open when it's bedtime", "type": "gif", "color": "#845ec2", "left": "84%", "top": "62%", "content": "https://media.giphy.com/media/3o6ZsWSg0bq6aV6n2w/giphy.gif" },
+    { "id": "surprise", "label": "Open for a surprise", "type": "message", "color": "#ff9f1c", "left": "30%", "top": "82%", "content": "You found it — here's a virtual kiss babyyy 😘" },
+    { "id": "cozy", "label": "Open when you want to feel cozy", "type": "gif", "color": "#00c9a7", "left": "56%", "top": "38%", "content": "https://media.giphy.com/media/5xaOcLGvzHxDKjufnLW/giphy.gif" }
+  ]
+}
