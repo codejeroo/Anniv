@@ -9,7 +9,7 @@ export default function PolaroidGallery({ photos = [] }) {
   const containerRef = useRef(null)
   // photos now expected as objects: { src, caption, name, back }
   // generate initial random positions (percent) and rotations
-  const items = useMemo(() => {
+  const initialItems = useMemo(() => {
     const half = Math.ceil(photos.length / 2)
     return photos.map((p, i) => {
       const isLeft = i < half
@@ -27,8 +27,11 @@ export default function PolaroidGallery({ photos = [] }) {
     })
   }, [photos])
 
+  const [itemsState, setItemsState] = useState(initialItems)
+  useEffect(() => setItemsState(initialItems), [initialItems])
+
   const [zCounter, setZCounter] = useState(1)
-  const [zMap, setZMap] = useState(() => items.reduce((acc, it) => (acc[it.id] = 1, acc), {}))
+  const [zMap, setZMap] = useState(() => initialItems.reduce((acc, it) => (acc[it.id] = 1, acc), {}))
   const [flipped, setFlipped] = useState({})
   const [focused, setFocused] = useState(null)
   const controlsRef = useRef({})
@@ -48,12 +51,12 @@ export default function PolaroidGallery({ photos = [] }) {
   function bringToFront(id) {
     setZCounter((c) => {
       const next = c + 1
-      setZMap((m) => ({ ...m, [id]: next }))
+  setZMap((m) => ({ ...m, [id]: next }))
       return next
     })
   }
 
-  const rendered = items.map((it, i) => {
+  const rendered = itemsState.map((it, i) => {
     const isFocused = focused === i
     return (
       <motion.div
@@ -65,8 +68,23 @@ export default function PolaroidGallery({ photos = [] }) {
         transition={{ type: 'spring', stiffness: 400, damping: 28 }}
         whileTap={{ scale: 1.04 }}
         drag
+        dragConstraints={containerRef}
         dragMomentum={false}
         onDragStart={() => bringToFront(it.id)}
+        onDragEnd={(e, info) => {
+          try {
+            const rect = containerRef.current && containerRef.current.getBoundingClientRect()
+            if (!rect) return
+            // info.point is the pointer position; compute new left/top as percent within container
+            const x = info.point.x - rect.left
+            const y = info.point.y - rect.top
+            const newLeft = (x / rect.width) * 100
+            const newTop = (y / rect.height) * 100
+            setItemsState((prev) => prev.map((it2) => it2.id === it.id ? { ...it2, left: Math.max(0, Math.min(100, newLeft)), top: Math.max(0, Math.min(100, newTop)) } : it2))
+          } catch (err) {
+            // ignore
+          }
+        }}
       >
         <div className={`polaroid-inner ${flipped[it.id] ? 'flipped' : ''}`} onClick={() => { setFlipped((s) => ({ ...s, [it.id]: !s[it.id] })); bringToFront(it.id) }}>
           <div className="polaroid-front">
