@@ -11,7 +11,6 @@ import EasterEggs from './components/EasterEggs'
 import OpenWhen from './components/OpenWhen'
 import Quiz from './components/Quiz'
 import BigLetter from './components/BigLetter'
-import LockUntil from './components/LockUntil'
 
 export default function App() {
   const [data, setData] = useState(null)
@@ -143,18 +142,6 @@ export default function App() {
   <OpenWhen items={data.openWhen} />
   {/* Global scattered polaroids overlay */}
   <PolaroidGallery photos={data.photos} />
-  {/* Lock overlay until anniversary midnight */}
-  <LockUntil targetISO={(() => {
-    // compute the next occurrence of anniversary date at 00:00
-    try {
-      const ann = new Date(data.anniversary)
-      const now = new Date()
-      const target = new Date(now.getFullYear(), ann.getMonth(), ann.getDate(), 0, 0, 0, 0)
-      // if that target is in the past, pick next year
-      if (target.getTime() <= now.getTime()) target.setFullYear(target.getFullYear() + 1)
-      return target.toISOString()
-    } catch(e){ return null }
-  })()} />
     </div>
   )
 }
